@@ -3,14 +3,14 @@
 
 
 /// @todo Uzupelnij swoje dane:
-//constexpr const char* const FIRSTNAME = "";
-//constexpr const char* const SURNAME   = "";
-//constexpr const char* const MAIL    = "";
-//constexpr const char* const BOOK_ID = "";
-constexpr const char* const FIRSTNAME = "Grzegorz";
-constexpr const char* const SURNAME   = "Bazior";
-constexpr const char* const MAIL    = "bazior@agh.edu.pl";
-constexpr const char* const BOOK_ID = "123456";
+constexpr const char* const FIRSTNAME = "Kacper";
+constexpr const char* const SURNAME   = "Rabczewski";
+constexpr const char* const MAIL    = "krabczewski@gmail.com";
+constexpr const char* const BOOK_ID = "2137";
+//constexpr const char* const FIRSTNAME = "Grzegorz";
+//constexpr const char* const SURNAME   = "Bazior";
+//constexpr const char* const MAIL    = "bazior@agh.edu.pl";
+//constexpr const char* const BOOK_ID = "123456";
 constexpr const char* const TEACHER_MAIL = "bazior[at]agh.edu.pl"; // change if not correct
 
 void validateStudentsInfo();
