@@ -1,0 +1,39 @@
+Running main() from /tmp/tmpo93pdmr_/student/zaj13FileMatrix/unitTests/lib/googletest/src/gtest_main.cc
+[==========] Running 15 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 15 tests from FileMatrixTester
+[ RUN      ] FileMatrixTester.initialisationOfSingleElementMatrix_expectedFileCreated
+/tmp/tmpo93pdmr_/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:182: Failure
+Value of: fileExists(filenameInProperPath)
+  Actual: false
+Expected: true
+file path: /tmp/testfile_176.matrix
+[  FAILED  ] FileMatrixTester.initialisationOfSingleElementMatrix_expectedFileCreated (0 ms)
+[ RUN      ] FileMatrixTester.initialisationOfMatrixSingleColumnButMultipleRows_expectedFileWithProperSizeCreated
+/tmp/tmpo93pdmr_/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:198: Failure
+Value of: fileExists(filenameInProperPath)
+  Actual: false
+Expected: true
+file path: /tmp/testfile_192.matrix
+[  FAILED  ] FileMatrixTester.initialisationOfMatrixSingleColumnButMultipleRows_expectedFileWithProperSizeCreated (0 ms)
+[ RUN      ] FileMatrixTester.initialisationOfMatrixMultipleColumnAndSingleRow_expectedFileWithProperSizeCreated
+/tmp/tmpo93pdmr_/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:214: Failure
+Value of: fileExists(filenameInProperPath)
+  Actual: false
+Expected: true
+file path: /tmp/testfile_208.matrix
+[  FAILED  ] FileMatrixTester.initialisationOfMatrixMultipleColumnAndSingleRow_expectedFileWithProperSizeCreated (0 ms)
+[ RUN      ] FileMatrixTester.initialisationOfSquareMatrixMultipleColumnAndMultipleRows_expectedFileWithProperSizeCreated
+/tmp/tmpo93pdmr_/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:230: Failure
+Value of: fileExists(filenameInProperPath)
+  Actual: false
+Expected: true
+file path: /tmp/testfile_224.matrix
+[  FAILED  ] FileMatrixTester.initialisationOfSquareMatrixMultipleColumnAndMultipleRows_expectedFileWithProperSizeCreated (0 ms)
+[ RUN      ] FileMatrixTester.accesingMatrixDataWithTooGreatIndex_expectedThrowingOutOfRangeException
+/tmp/tmpo93pdmr_/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:247: Failure
+Expected: matrix[rowIndexOutOfRange] throws an exception of type out_of_range.
+  Actual: it throws nothing.
+[  FAILED  ] FileMatrixTester.accesingMatrixDataWithTooGreatIndex_expectedThrowingOutOfRangeException (0 ms)
+[ RUN      ] FileMatrixTester.accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead
+timeout: the monitored command dumped core
