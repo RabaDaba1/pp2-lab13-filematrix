@@ -22,6 +22,6 @@ template class FileMatrix<char, std::size_t>;
 //template class FileMatrix<short, std::size_t>;
 //template class FileMatrix<int, std::size_t>;
 template class FileMatrix<unsigned, std::size_t>;
-//template class FileMatrix<long long, std::size_t>;
+template class FileMatrix<long long, std::size_t>;
 template class FileMatrix<unsigned long long, std::size_t>;
 

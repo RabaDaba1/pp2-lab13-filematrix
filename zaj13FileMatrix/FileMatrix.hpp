@@ -159,14 +159,20 @@ private: // methods:
         rows_ = sourceMatrix.rows_;
         columns_ = sourceMatrix.columns_;
         currentRowNumber_ = sourceMatrix.currentRowNumber_;
-        fileDescriptor_ = std::fstream(filename_, std::ios::out | std::ios::in | std::ios::binary);
 
         // Copy the binary file
-        fileDescriptor_ << sourceMatrix.fileDescriptor_.rdbuf();
+        std::fstream output(filename_, std::ios::out | std::ios::binary);
+
+        output << sourceMatrix.fileDescriptor_.rdbuf();
+
+        sourceMatrix.fileDescriptor_.close();
+        output.close();
 
         // Copy the currentRow_
         currentRow_ = std::make_unique<T[]>(rows_);
         std::copy(sourceMatrix.currentRow_.get(), sourceMatrix.currentRow_.get() + rows_, currentRow_.get());
+
+        fileDescriptor_ = std::fstream(filename_, std::ios::out | std::ios::in | std::ios::binary);
     }
 
     void move(FileMatrix &&sourceMatrix) {
@@ -181,20 +187,24 @@ private: // methods:
         std::rename(sourceMatrix.filename_.data(), filename_.data());
 
         // Clear sourceMatrix
-        sourceMatrix.fileDescriptor_.close();
-        sourceMatrix.fileDescriptor_ = std::fstream();
+        sourceMatrix.~FileMatrix();
     }
 
     void loadRow(IndexType indexOfRow) const {
+        if (indexOfRow >= rows_)
+            throw std::out_of_range("");
+
         if(currentRow_) {
             // Write current row to file
-            fileDescriptor_.seekg(currentRowNumber_ * columns_ * sizeof(T));
-            fileDescriptor_ << reinterpret_cast<char *>(currentRow_.get());
+            fileDescriptor_.seekp(2*sizeof(IndexType) + currentRowNumber_ * columns_ * sizeof(T), std::ios::beg);
+            fileDescriptor_.write(reinterpret_cast<char *>(currentRow_.get()), sizeof(T)*columns_);
             flush();
         }
 
+        currentRowNumber_ = indexOfRow;
+
         // Move descriptor to the position of the i-th row
-        fileDescriptor_.seekg(indexOfRow * columns_ * sizeof(T));
+        fileDescriptor_.seekg(2*sizeof(IndexType) + currentRowNumber_ * columns_ * sizeof(T), std::ios::beg);
 
         // Read the row into a dynamically allocated array
         currentRow_ = std::make_unique<T[]>(columns_);
@@ -209,23 +219,34 @@ private: // fields:
     mutable std::fstream fileDescriptor_;
 
     mutable std::unique_ptr<T[]> currentRow_;
-    mutable IndexType currentRowNumber_{};
+    mutable IndexType currentRowNumber_ {};
+    mutable bool isLoaded = false;
 };
 
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType>::~FileMatrix() {
-    fileDescriptor_.close();
+    if (fileDescriptor_.is_open())
+        fileDescriptor_.close();
     currentRow_.reset();
 }
-
 
 /** CONSTRUCTORS **/
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType>::FileMatrix(IndexType rows, IndexType columns, const std::string &newFileName): rows_(rows), columns_(columns), filename_(newFileName) {
-    fileDescriptor_ = std::fstream(newFileName + extention(), std::ios::out | std::ios::in | std::ios::binary);
+    // Create a file
+    std::fstream file(filename_, std::ios::out | std::ios::trunc | std::ios::binary);
 
-    fileDescriptor_.write(reinterpret_cast<char*>(rows), sizeof(IndexType));
-    fileDescriptor_.write(reinterpret_cast<char*>(columns), sizeof(IndexType));
+    // Fill file with info and matrix of 0
+    file.write(reinterpret_cast<char*>(&rows_), sizeof(IndexType));
+    file.write(reinterpret_cast<char*>(&columns_), sizeof(IndexType));
+
+    T buff {};
+    for (int i = 0; i < rows_*columns_; i++)
+        file.write(reinterpret_cast<char*>(&buff), sizeof(T));
+
+    file.close();
+
+    fileDescriptor_ = std::fstream(filename_, std::ios::out | std::ios::in | std::ios::binary);
 }
 
 /// Copy constructor
@@ -248,8 +269,9 @@ FileMatrix<T, IndexType>::FileMatrix(FileMatrix &&sourceMatrix) {
 /** ASSIGNMENT OPERATORS **/
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType> &FileMatrix<T, IndexType>::operator=(const FileMatrix &sourceMatrix) {
-    if (this != &sourceMatrix)
+    if (this != &sourceMatrix) {
         this->copy(sourceMatrix);
+    }
 
     return *this;
 }
@@ -265,16 +287,14 @@ FileMatrix<T, IndexType> &FileMatrix<T, IndexType>::operator=(FileMatrix &&sourc
 /** OVERLOADED OPERATORS **/
 template<typename T, typename IndexType>
 T *FileMatrix<T, IndexType>::operator[](IndexType indexOfRow) {
-    if (currentRowNumber_ != indexOfRow)
-        loadRow(indexOfRow);
+    loadRow(indexOfRow);
 
     return currentRow_.get();
 }
 
 template<typename T, typename IndexType>
 const T *FileMatrix<T, IndexType>::operator[](IndexType indexOfRow) const {
-    if (currentRowNumber_ != indexOfRow)
-        loadRow(indexOfRow);
+    loadRow(indexOfRow);
 
     return currentRow_.get();
 }
