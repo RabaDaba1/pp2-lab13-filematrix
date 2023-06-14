@@ -185,9 +185,6 @@ private: // methods:
 
         // Rename binary file
         std::rename(sourceMatrix.filename_.data(), filename_.data());
-
-        // Clear sourceMatrix
-        sourceMatrix.~FileMatrix();
     }
 
     void loadRow(IndexType indexOfRow) const {
@@ -220,13 +217,11 @@ private: // fields:
 
     mutable std::unique_ptr<T[]> currentRow_;
     mutable IndexType currentRowNumber_ {};
-    mutable bool isLoaded = false;
 };
 
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType>::~FileMatrix() {
-    if (fileDescriptor_.is_open())
-        fileDescriptor_.close();
+    fileDescriptor_.close();
     currentRow_.reset();
 }
 
@@ -247,6 +242,7 @@ FileMatrix<T, IndexType>::FileMatrix(IndexType rows, IndexType columns, const st
     file.close();
 
     fileDescriptor_ = std::fstream(filename_, std::ios::out | std::ios::in | std::ios::binary);
+    currentRow_ = std::make_unique<T[]>(rows_);
 }
 
 /// Copy constructor
@@ -269,9 +265,8 @@ FileMatrix<T, IndexType>::FileMatrix(FileMatrix &&sourceMatrix) {
 /** ASSIGNMENT OPERATORS **/
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType> &FileMatrix<T, IndexType>::operator=(const FileMatrix &sourceMatrix) {
-    if (this != &sourceMatrix) {
+    if (this != &sourceMatrix)
         this->copy(sourceMatrix);
-    }
 
     return *this;
 }
@@ -306,12 +301,10 @@ bool FileMatrix<T, IndexType>::operator==(const FileMatrix &matrix) const {
         return false;
 
     // Compare the contents of the two matrices
-    for (IndexType i = 0; i < rows_; ++i) {
-        for (IndexType j = 0; j < columns_; ++j) {
+    for (IndexType i = 0; i < rows_; ++i)
+        for (IndexType j = 0; j < columns_; ++j)
             if ((*this)[i][j] != matrix[i][j])
                 return false;
-        }
-    }
 
     // The two matrices are equal
     return true;
