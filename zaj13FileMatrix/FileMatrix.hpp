@@ -5,7 +5,7 @@
 #include <cstddef> // std::size_t
 #include <memory>  // std::unique_ptr
 #include <fstream>
-
+#include <sstream>
 
 /** @file FileMatrix.hpp
     @date 16 kwietnia 2023
@@ -43,7 +43,7 @@
  * @param currentRow_ jest to ostatnio odczytywany rząd macierzy,
  *        dzięki niemu możemy ograniczyć lekko operacje dyskowe
  * @param currentRowNumber_ informacja którym rzędem jest powyższy
- * @param fileDescriptor_ deskryptor pliku o nazwie `filename_`,
+ * @param fileDescriptor_ deskryptor pliku o nazwie `fname_`,
  *        nie musimy za każdym razem na nowo otwierać i zamykać pliku (to trwa) **/
 template<typename T, typename IndexType = std::size_t>
 class FileMatrix
@@ -54,7 +54,7 @@ public:
         return ".matrix";
     }
 
-    /// @brief konstruktor przyjmujący nazwę pliku, wystarczy, że zapamięta on ją w zmiennej `filename_` i wyzeruje zmienne klasy
+    /// @brief konstruktor przyjmujący nazwę pliku, wystarczy, że zapamięta on ją w zmiennej `fname_` i wyzeruje zmienne klasy
     FileMatrix(const std::string& filename): filename_(filename)
     {}
 
@@ -64,19 +64,19 @@ public:
     FileMatrix(IndexType rows, IndexType columns, const std::string& newFileNam);
 
     /** @brief konstruktor kopiujący, który powinien utworzyć nowy plik
-     *  w tym samym katalogu i o nazwie niemalże identycznej jak `sourceMatrix.filename_`
+     *  w tym samym katalogu i o nazwie niemalże identycznej jak `sourceMatrix.fname_`
      *  nazwą pliku ale z suffixem: `_copy` np.:
      *  `path/to/file/matrix100x100.matrix` -> `path/to/file/matrix100x100_copy.matrix`
      *  Zawartość dwóch plików powinna być dokładnie taka sama (zgodność binarna) **/
     FileMatrix(const FileMatrix& sourceMatrix);
 
-    /** @brief konstruktor przenoszący, który zmienić nazwę pliku `sourceMatrix.filename_`
+    /** @brief konstruktor przenoszący, który zmienić nazwę pliku `sourceMatrix.fname_`
      *  na taki zawierający nazwę z suffixem `_move` w tym samym katalogu
      *  i o nazwie niemalże identycznej np.:
      *  `path/to/file/matrix100x100.matrix` -> `path/to/file/matrix100x100_move.matrix`
      *  `sourceMatrix` powinien być wyczyszczony jak w stanie po zawołaniu
      *  konstruktora przyjmującego jedynie nazwę pliku.
-     *  Plik `filename_` nie musi istnieć, ale obiekt
+     *  Plik `fname_` nie musi istnieć, ale obiekt
      *  powinien się nadawać do dalszego użytkowania. **/
     FileMatrix(FileMatrix&& sourceMatrix);
 
@@ -84,13 +84,13 @@ public:
     ~FileMatrix();
 
     /** @brief operator przypisania kopiujący, po jego zawołaniu plik
-     *  `filename_` powinien mieć zawartość binarnie identyczną do `sourceMatrix.filename_` **/
+     *  `fname_` powinien mieć zawartość binarnie identyczną do `sourceMatrix.fname_` **/
     FileMatrix& operator=(const FileMatrix& sourceMatrix);
 
     /** @brief operator przypisania przenoszący, po jego zawołaniu plik
-     *  `filename_` powinien mieć zawartość dokładnie taką jak `sourceMatrix.filename_`
+     *  `fname_` powinien mieć zawartość dokładnie taką jak `sourceMatrix.fname_`
      *  (najprościej zrobić `rename()` na plikach).
-     *  Z kolei plik `filename_` nie musi istnieć, ale obiekt
+     *  Z kolei plik `fname_` nie musi istnieć, ale obiekt
      *  powinien się nadawać do dalszego użytkowania. **/
     FileMatrix& operator=(FileMatrix&& sourceMatrix);
 
@@ -133,16 +133,64 @@ public:
     /** @brief metoda zrzucająca aktualnie trzymany wiersz w pamięci na dysk.
      *  @note zalecam też aby wołała `fstream::flush()`, aby buforowalne dane zostały mimo wszystko od razu wrzucone na dysk **/
     void flush() const {
+        fileDescriptor_.seekp(2*sizeof(IndexType) + currentRowNumber_ * columns_ * sizeof(T), std::ios::beg);
+        fileDescriptor_.write(reinterpret_cast<char *>(currentRow_.get()), sizeof(T)*columns_);
+
         fileDescriptor_.flush();
     };
 
     /** @brief iterator umożliwiający przeglądanie danych idąc wierszami, a następnie w każdym wierszu do każdej kolumny.
      *  Wystarczy, żeby to był iterator jednokierunkowy.
      *  @note Jeśli go zdefiniujesz zdefiniuj makro: `#define FILE_MATRIX_ITERATOR_DEFINED 1` **/
-    struct iterator {};
+    struct iterator {
+//        std::string fname_ {};
+//        mutable std::fstream descriptor_ {};
+//        IndexType dim_rows_, dim_cols_;
+//        IndexType position_ {};
+//
+//        iterator(const FileMatrix& matrix, IndexType pos = {}): fname_(matrix.filename_), dim_rows_(matrix.rows_), dim_cols_(matrix.columns_), position_(pos) {
+//            descriptor_ = std::fstream(fname_, std::ios::in | std::ios::out | std::ios::binary);
+//        };
+//
+//        iterator(const iterator& sourceIterator): fname_(sourceIterator.fname_), dim_rows_(sourceIterator.dim_rows_), dim_cols_(sourceIterator.dim_cols_), position_(sourceIterator.position_) {
+//            descriptor_ = std::fstream(fname_, std::ios::in | std::ios::out | std::ios::binary);
+//        }
+//
+//        iterator& operator++() {
+//            position_++;
+//            return *this;
+//        };
+//        iterator& operator--() {
+//            position_--;
+//            return *this;
+//        };
+//
+//        bool operator==(const iterator &anotherIt) const { return fname_ == anotherIt.fname_ && position_ == anotherIt.position_; }
+//        bool operator!=(const iterator& anotherIt) const { return fname_ != anotherIt.fname_ || position_ != anotherIt.position_; }
+//
+//        bool operator<(const iterator& rhs) const {return position_ < rhs.position_; }
+//        bool operator>(const iterator& rhs) const {return position_ > rhs.position_; }
+//
+//        int operator*() const {
+//            descriptor_.seekg(2*sizeof(IndexType) + position_ * sizeof(T), std::ios::beg);
+//
+//            char *result {};
+//            descriptor_.read(result, sizeof(T));
+//
+//            std::stringstream ss(result);
+//            int num;
+//            ss >> num;
+//
+//            return num;
+//        }
+    };
 
-    iterator begin();
-    iterator end();
+    iterator begin() {
+//        return iterator(*this, 0);
+    }
+    iterator end() {
+//        return iterator(*this, rows_*columns_);
+    }
 
 private: // methods:
     // TODO: zaimplementuj jesli cos potrzeba
@@ -160,12 +208,13 @@ private: // methods:
         columns_ = sourceMatrix.columns_;
         currentRowNumber_ = sourceMatrix.currentRowNumber_;
 
-        // Copy the binary file
+        // Create new binary file
         std::fstream output(filename_, std::ios::out | std::ios::binary);
 
+        // Copy source file contents
+        sourceMatrix.fileDescriptor_.seekg(0, std::ios::beg);
+        sourceMatrix.fileDescriptor_.seekp(0, std::ios::beg);
         output << sourceMatrix.fileDescriptor_.rdbuf();
-
-        sourceMatrix.fileDescriptor_.close();
         output.close();
 
         // Copy the currentRow_
@@ -177,31 +226,31 @@ private: // methods:
 
     void move(FileMatrix &&sourceMatrix) {
         // Move attributes
-        rows_ = std::move(sourceMatrix.rows_);
-        columns_ = std::move(sourceMatrix.columns_);
+        rows_ = std::exchange(sourceMatrix.rows_, 0);
+        columns_ = std::exchange(sourceMatrix.columns_, 0);
         currentRow_ = std::move(sourceMatrix.currentRow_);
-        currentRowNumber_ = std::move(sourceMatrix.currentRowNumber_);
+        currentRowNumber_ = std::exchange(sourceMatrix.currentRowNumber_, 0);
         fileDescriptor_ = std::fstream(filename_, std::ios::out | std::ios::in | std::ios::binary);
 
         // Rename binary file
         std::rename(sourceMatrix.filename_.data(), filename_.data());
+
+        // Clear
     }
 
     void loadRow(IndexType indexOfRow) const {
         if (indexOfRow >= rows_)
             throw std::out_of_range("");
 
-        if(currentRow_) {
-            // Write current row to file
-            fileDescriptor_.seekp(2*sizeof(IndexType) + currentRowNumber_ * columns_ * sizeof(T), std::ios::beg);
-            fileDescriptor_.write(reinterpret_cast<char *>(currentRow_.get()), sizeof(T)*columns_);
+        // Write current row to file if there is one loaded
+        if(currentRow_)
             flush();
-        }
 
         currentRowNumber_ = indexOfRow;
 
         // Move descriptor to the position of the i-th row
         fileDescriptor_.seekg(2*sizeof(IndexType) + currentRowNumber_ * columns_ * sizeof(T), std::ios::beg);
+        fileDescriptor_.seekp(2*sizeof(IndexType) + currentRowNumber_ * columns_ * sizeof(T), std::ios::beg);
 
         // Read the row into a dynamically allocated array
         currentRow_ = std::make_unique<T[]>(columns_);
@@ -231,7 +280,7 @@ FileMatrix<T, IndexType>::FileMatrix(IndexType rows, IndexType columns, const st
     // Create a file
     std::fstream file(filename_, std::ios::out | std::ios::trunc | std::ios::binary);
 
-    // Fill file with info and matrix of 0
+    // Fill file with rows and columns and rest with 0
     file.write(reinterpret_cast<char*>(&rows_), sizeof(IndexType));
     file.write(reinterpret_cast<char*>(&columns_), sizeof(IndexType));
 
@@ -242,10 +291,10 @@ FileMatrix<T, IndexType>::FileMatrix(IndexType rows, IndexType columns, const st
     file.close();
 
     fileDescriptor_ = std::fstream(filename_, std::ios::out | std::ios::in | std::ios::binary);
-    currentRow_ = std::make_unique<T[]>(rows_);
+    loadRow(IndexType{});
 }
 
-/// Copy constructor
+// Copy constructor
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType>::FileMatrix(const FileMatrix &sourceMatrix) {
     setFilename(sourceMatrix.filename_, "_copy");
@@ -253,7 +302,7 @@ FileMatrix<T, IndexType>::FileMatrix(const FileMatrix &sourceMatrix) {
     this->copy(sourceMatrix);
 }
 
-/// Move constructor
+// Move constructor
 template<typename T, typename IndexType>
 FileMatrix<T, IndexType>::FileMatrix(FileMatrix &&sourceMatrix) {
     setFilename(sourceMatrix.filename_, "_move");
@@ -301,10 +350,11 @@ bool FileMatrix<T, IndexType>::operator==(const FileMatrix &matrix) const {
         return false;
 
     // Compare the contents of the two matrices
-    for (IndexType i = 0; i < rows_; ++i)
-        for (IndexType j = 0; j < columns_; ++j)
-            if ((*this)[i][j] != matrix[i][j])
-                return false;
+    fileDescriptor_.seekg(0, std::ifstream::beg);
+    matrix.fileDescriptor_.seekg(0, std::ifstream::beg);
+    return std::equal(std::istreambuf_iterator<char>(fileDescriptor_.rdbuf()),
+                      std::istreambuf_iterator<char>(),
+                      std::istreambuf_iterator<char>(matrix.fileDescriptor_.rdbuf()));
 
     // The two matrices are equal
     return true;
