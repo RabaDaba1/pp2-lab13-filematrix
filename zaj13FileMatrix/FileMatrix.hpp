@@ -187,9 +187,11 @@ public:
 
     iterator begin() {
 //        return iterator(*this, 0);
+return {};
     }
     iterator end() {
 //        return iterator(*this, rows_*columns_);
+        return {};
     }
 
 private: // methods:
