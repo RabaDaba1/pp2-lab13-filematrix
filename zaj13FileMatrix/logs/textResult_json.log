@@ -3,8 +3,8 @@
   "failures": 3,
   "disabled": 0,
   "errors": 0,
-  "timestamp": "2023-06-16T16:43:40Z",
-  "time": "0.534s",
+  "timestamp": "2023-06-16T16:48:01Z",
+  "time": "0.46s",
   "name": "AllTests",
   "testsuites": [
     {
@@ -13,173 +13,173 @@
       "failures": 3,
       "disabled": 0,
       "errors": 0,
-      "timestamp": "2023-06-16T16:43:40Z",
-      "time": "0.534s",
+      "timestamp": "2023-06-16T16:48:01Z",
+      "time": "0.46s",
       "testsuite": [
         {
           "name": "initialisationOfSingleElementMatrix_expectedFileCreated",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 170,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "initialisationOfMatrixSingleColumnButMultipleRows_expectedFileWithProperSizeCreated",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 186,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "initialisationOfMatrixMultipleColumnAndSingleRow_expectedFileWithProperSizeCreated",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 202,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "initialisationOfSquareMatrixMultipleColumnAndMultipleRows_expectedFileWithProperSizeCreated",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 218,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "accesingMatrixDataWithTooGreatIndex_expectedThrowingOutOfRangeException",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 234,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 253,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 283,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
-          "time": "0.011s",
+          "timestamp": "2023-06-16T16:48:01Z",
+          "time": "0.007s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "comparingDifferentMatrixesWithTheSameNumberOfRowsAndColumnsButDifferentData_expectedComparationReturnsFalse",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 326,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
+          "timestamp": "2023-06-16T16:48:01Z",
           "time": "0s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "copyConstruction_expectedFileCopiedWithEqualBinaryData",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 371,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
-          "time": "0.133s",
+          "timestamp": "2023-06-16T16:48:01Z",
+          "time": "0.112s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "assignmentOperatorCopying_expectedMatricesTheSame",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 413,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:40Z",
-          "time": "0.2s",
+          "timestamp": "2023-06-16T16:48:01Z",
+          "time": "0.161s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "moveConstruction_expectedFileMovedButSourceObjectUsable",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 459,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:41Z",
-          "time": "0.093s",
+          "timestamp": "2023-06-16T16:48:02Z",
+          "time": "0.086s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 510,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:41Z",
-          "time": "0.093s",
+          "timestamp": "2023-06-16T16:48:02Z",
+          "time": "0.09s",
           "classname": "FileMatrixTester"
         },
         {
           "name": "containerHasBeginEndMethodsReturningIterator",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 563,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:41Z",
+          "timestamp": "2023-06-16T16:48:02Z",
           "time": "0s",
           "classname": "FileMatrixTester",
           "failures": [
             {
-              "failure": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp:597\nFailed\nIterator not implemented!",
+              "failure": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp:597\nFailed\nIterator not implemented!",
               "type": ""
             }
           ]
         },
         {
           "name": "containerHasIteratowWorkingWithForLoop",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 601,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:41Z",
+          "timestamp": "2023-06-16T16:48:02Z",
           "time": "0s",
           "classname": "FileMatrixTester",
           "failures": [
             {
-              "failure": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp:638\nFailed\nIterator not implemented!",
+              "failure": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp:638\nFailed\nIterator not implemented!",
               "type": ""
             }
           ]
         },
         {
           "name": "containerHasIteratowWorkingWithStl",
-          "file": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
+          "file": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp",
           "line": 642,
           "status": "RUN",
           "result": "COMPLETED",
-          "timestamp": "2023-06-16T16:43:41Z",
+          "timestamp": "2023-06-16T16:48:02Z",
           "time": "0s",
           "classname": "FileMatrixTester",
           "failures": [
             {
-              "failure": "\/tmp\/tmpy70ej8fb\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp:679\nFailed\nIterator not implemented!",
+              "failure": "\/tmp\/tmpfyvz0_nr\/student\/zaj13FileMatrix\/unitTests\/FileMatrixTests.cpp:679\nFailed\nIterator not implemented!",
               "type": ""
             }
           ]

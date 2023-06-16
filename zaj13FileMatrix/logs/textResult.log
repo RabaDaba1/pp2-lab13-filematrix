@@ -1,4 +1,4 @@
-Running main() from /tmp/tmpy70ej8fb/student/zaj13FileMatrix/unitTests/lib/googletest/src/gtest_main.cc
+Running main() from /tmp/tmpfyvz0_nr/student/zaj13FileMatrix/unitTests/lib/googletest/src/gtest_main.cc
 [==========] Running 15 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 15 tests from FileMatrixTester
@@ -15,36 +15,36 @@ Running main() from /tmp/tmpy70ej8fb/student/zaj13FileMatrix/unitTests/lib/googl
 [ RUN      ] FileMatrixTester.accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead
 [       OK ] FileMatrixTester.accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead (0 ms)
 [ RUN      ] FileMatrixTester.comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue
-[       OK ] FileMatrixTester.comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue (11 ms)
+[       OK ] FileMatrixTester.comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue (7 ms)
 [ RUN      ] FileMatrixTester.comparingDifferentMatrixesWithTheSameNumberOfRowsAndColumnsButDifferentData_expectedComparationReturnsFalse
 [       OK ] FileMatrixTester.comparingDifferentMatrixesWithTheSameNumberOfRowsAndColumnsButDifferentData_expectedComparationReturnsFalse (0 ms)
 [ RUN      ] FileMatrixTester.copyConstruction_expectedFileCopiedWithEqualBinaryData
-[       OK ] FileMatrixTester.copyConstruction_expectedFileCopiedWithEqualBinaryData (133 ms)
+[       OK ] FileMatrixTester.copyConstruction_expectedFileCopiedWithEqualBinaryData (112 ms)
 [ RUN      ] FileMatrixTester.assignmentOperatorCopying_expectedMatricesTheSame
-[       OK ] FileMatrixTester.assignmentOperatorCopying_expectedMatricesTheSame (200 ms)
+[       OK ] FileMatrixTester.assignmentOperatorCopying_expectedMatricesTheSame (161 ms)
 [ RUN      ] FileMatrixTester.moveConstruction_expectedFileMovedButSourceObjectUsable
-[       OK ] FileMatrixTester.moveConstruction_expectedFileMovedButSourceObjectUsable (93 ms)
+[       OK ] FileMatrixTester.moveConstruction_expectedFileMovedButSourceObjectUsable (86 ms)
 [ RUN      ] FileMatrixTester.assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable
-[       OK ] FileMatrixTester.assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable (93 ms)
+[       OK ] FileMatrixTester.assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable (90 ms)
 [ RUN      ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator
-/tmp/tmpy70ej8fb/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:597: Failure
+/tmp/tmpfyvz0_nr/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:597: Failure
 Failed
 Iterator not implemented!
 [  FAILED  ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator (0 ms)
 [ RUN      ] FileMatrixTester.containerHasIteratowWorkingWithForLoop
-/tmp/tmpy70ej8fb/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:638: Failure
+/tmp/tmpfyvz0_nr/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:638: Failure
 Failed
 Iterator not implemented!
 [  FAILED  ] FileMatrixTester.containerHasIteratowWorkingWithForLoop (0 ms)
 [ RUN      ] FileMatrixTester.containerHasIteratowWorkingWithStl
-/tmp/tmpy70ej8fb/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:679: Failure
+/tmp/tmpfyvz0_nr/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:679: Failure
 Failed
 Iterator not implemented!
 [  FAILED  ] FileMatrixTester.containerHasIteratowWorkingWithStl (0 ms)
-[----------] 15 tests from FileMatrixTester (534 ms total)
+[----------] 15 tests from FileMatrixTester (460 ms total)
 
 [----------] Global test environment tear-down
-[==========] 15 tests from 1 test suite ran. (534 ms total)
+[==========] 15 tests from 1 test suite ran. (460 ms total)
 [  PASSED  ] 12 tests.
 [  FAILED  ] 3 tests, listed below:
 [  FAILED  ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator
