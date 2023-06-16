@@ -274,6 +274,7 @@ template<typename T, typename IndexType>
 FileMatrix<T, IndexType>::~FileMatrix() {
     fileDescriptor_.close();
     currentRow_.reset();
+    std::remove(filename_.c_str());
 }
 
 /** CONSTRUCTORS **/
