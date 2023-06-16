@@ -6,5 +6,116 @@
 [ 57%] Built target gtest_main
 [ 71%] Building CXX object unitTests/CMakeFiles/unit_tests.dir/FileMatrixTests.cpp.o
 [ 85%] Building CXX object unitTests/CMakeFiles/unit_tests.dir/__/FileMatrix.cpp.o
+In file included from /tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:12:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = signed char; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:14:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = signed char; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:14:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = short int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:15:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = short int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:15:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:16:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:16:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = long int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:17:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = long int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:17:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = double; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:18:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = double; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:18:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = float; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:19:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = float; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:19:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = long unsigned int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:20:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = long unsigned int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:20:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = char; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:21:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = char; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:21:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = unsigned int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:24:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = unsigned int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:24:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = long long int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:25:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = long long int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:25:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::begin() [with T = long long unsigned int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:26:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  190 |     }
+      |     ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp: In instantiation of ‘FileMatrix<T, IndexType>::iterator FileMatrix<T, IndexType>::end() [with T = long long unsigned int; IndexType = long unsigned int]’:
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp:26:16:   required from here
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: no return statement in function returning non-void [-Wreturn-type]
+  193 |     }
+      |     ^
 [100%] Linking CXX executable ../bin/unit_tests
 [100%] Built target unit_tests

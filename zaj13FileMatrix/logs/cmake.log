@@ -10,19 +10,19 @@
 -- Check for working CXX compiler: /usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
-Katalog do zbudowanego projektu: /tmp/tmp1c6ob4ns/student/zaj13FileMatrix/build
- + Znaleziono nagłówki: /tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp
- + Znaleziono źródła: /tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.cpp;/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/main.cpp
- + Znaleziono źródła bez main.cpp: /tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.cpp
+Katalog do zbudowanego projektu: /tmp/tmpy70ej8fb/student/zaj13FileMatrix/build
+ + Znaleziono nagłówki: /tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp
+ + Znaleziono źródła: /tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp;/tmp/tmpy70ej8fb/student/zaj13FileMatrix/main.cpp
+ + Znaleziono źródła bez main.cpp: /tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.cpp
 	* valgrind found: /usr/bin/valgrind
--- Found Python: /tmp/tmptq8s399h/teacher/test-venv/bin/python3 (found version "3.11.0") found components: Interpreter 
+-- Found Python: /tmp/tmplljj9vj3/teacher/test-venv/bin/python3 (found version "3.11.0") found components: Interpreter 
 -- Looking for pthread.h
 -- Looking for pthread.h - found
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
- + Znaleziono pliki testów: /tmp/tmp1c6ob4ns/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp
+ + Znaleziono pliki testów: /tmp/tmpy70ej8fb/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp
  + katalog nagłówków: 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /tmp/tmp1c6ob4ns/student/zaj13FileMatrix/build
+-- Build files have been written to: /tmp/tmpy70ej8fb/student/zaj13FileMatrix/build

@@ -1,36 +1,42 @@
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int8_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:190:5: warning: Found an exit path from function with non-void return type that has missing return statement [missingReturn]
+    }
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int16_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:193:5: warning: Found an exit path from function with non-void return type that has missing return statement [missingReturn]
+    }
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int32_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int8_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int64_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int16_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < double , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int32_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < float , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < int64_t , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < unsigned long , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < double , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < char , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < float , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < unsigned int , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < unsigned long , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < long long , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < char , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < unsigned long long , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < unsigned int , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
-/tmp/tmp1c6ob4ns/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
-    FileMatrix(const std::string& filename): fname_(filename)
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < long long , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
+    ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix < unsigned long long , unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
+    ^
+/tmp/tmpy70ej8fb/student/zaj13FileMatrix/FileMatrix.hpp:58:5: warning: Class 'FileMatrix' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    FileMatrix(const std::string& filename): filename_(filename)
     ^
