@@ -236,8 +236,6 @@ private: // methods:
 
         // Rename binary file
         std::rename(sourceMatrix.filename_.data(), filename_.data());
-
-        // Clear
     }
 
     void loadRow(IndexType indexOfRow) const {
