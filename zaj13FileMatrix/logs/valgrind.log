@@ -1,162 +1,147 @@
 ==164== Memcheck, a memory error detector
 ==164== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==164== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==164== Command: /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build//bin/unit_tests
+==164== Command: /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build//bin/unit_tests
 ==164== 
-Running main() from /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/unitTests/lib/googletest/src/gtest_main.cc
+Running main() from /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/unitTests/lib/googletest/src/gtest_main.cc
 [==========] Running 15 tests from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 15 tests from FileMatrixTester
 [ RUN      ] FileMatrixTester.initialisationOfSingleElementMatrix_expectedFileCreated
-[       OK ] FileMatrixTester.initialisationOfSingleElementMatrix_expectedFileCreated (97 ms)
+[       OK ] FileMatrixTester.initialisationOfSingleElementMatrix_expectedFileCreated (166 ms)
 [ RUN      ] FileMatrixTester.initialisationOfMatrixSingleColumnButMultipleRows_expectedFileWithProperSizeCreated
 [       OK ] FileMatrixTester.initialisationOfMatrixSingleColumnButMultipleRows_expectedFileWithProperSizeCreated (16 ms)
 [ RUN      ] FileMatrixTester.initialisationOfMatrixMultipleColumnAndSingleRow_expectedFileWithProperSizeCreated
-[       OK ] FileMatrixTester.initialisationOfMatrixMultipleColumnAndSingleRow_expectedFileWithProperSizeCreated (15 ms)
+[       OK ] FileMatrixTester.initialisationOfMatrixMultipleColumnAndSingleRow_expectedFileWithProperSizeCreated (16 ms)
 [ RUN      ] FileMatrixTester.initialisationOfSquareMatrixMultipleColumnAndMultipleRows_expectedFileWithProperSizeCreated
-[       OK ] FileMatrixTester.initialisationOfSquareMatrixMultipleColumnAndMultipleRows_expectedFileWithProperSizeCreated (24 ms)
+[       OK ] FileMatrixTester.initialisationOfSquareMatrixMultipleColumnAndMultipleRows_expectedFileWithProperSizeCreated (26 ms)
 [ RUN      ] FileMatrixTester.accesingMatrixDataWithTooGreatIndex_expectedThrowingOutOfRangeException
-[       OK ] FileMatrixTester.accesingMatrixDataWithTooGreatIndex_expectedThrowingOutOfRangeException (50 ms)
+[       OK ] FileMatrixTester.accesingMatrixDataWithTooGreatIndex_expectedThrowingOutOfRangeException (54 ms)
 [ RUN      ] FileMatrixTester.accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead
-[       OK ] FileMatrixTester.accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead (40 ms)
+[       OK ] FileMatrixTester.accesingMatrixElementsWithIndex_expectedSucessfullWriteAndRead (46 ms)
 [ RUN      ] FileMatrixTester.comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue
-[       OK ] FileMatrixTester.comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue (50 ms)
+[       OK ] FileMatrixTester.comparingOfMatrixesWithTheSameData_expectedComparationReturnsTrue (56 ms)
 [ RUN      ] FileMatrixTester.comparingDifferentMatrixesWithTheSameNumberOfRowsAndColumnsButDifferentData_expectedComparationReturnsFalse
-[       OK ] FileMatrixTester.comparingDifferentMatrixesWithTheSameNumberOfRowsAndColumnsButDifferentData_expectedComparationReturnsFalse (24 ms)
+[       OK ] FileMatrixTester.comparingDifferentMatrixesWithTheSameNumberOfRowsAndColumnsButDifferentData_expectedComparationReturnsFalse (27 ms)
 [ RUN      ] FileMatrixTester.copyConstruction_expectedFileCopiedWithEqualBinaryData
-[       OK ] FileMatrixTester.copyConstruction_expectedFileCopiedWithEqualBinaryData (2096 ms)
+[       OK ] FileMatrixTester.copyConstruction_expectedFileCopiedWithEqualBinaryData (2098 ms)
 [ RUN      ] FileMatrixTester.assignmentOperatorCopying_expectedMatricesTheSame
 ==164== Invalid read of size 8
 ==164==    at 0x4852934: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x13A051: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x1399BF: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x138B69: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x136DDF: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x133158: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12E403: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128A6C: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13C711: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13BF02: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13AD8D: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x138DC1: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134C74: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12F317: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x129238: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164==  Address 0x4eaac90 is 0 bytes after a block of size 800 alloc'd
 ==164==    at 0x484A2F3: operator new[](unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x132C15: std::_MakeUniq<unsigned long long []>::__array std::make_unique<unsigned long long []>(unsigned long) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12DEE4: FileMatrix<unsigned long long, unsigned long>::loadRow(unsigned long) const (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128952: FileMatrix<unsigned long long, unsigned long>::operator[](unsigned long) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B41B: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x158152: testing::TestInfo::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x158A90: testing::TestSuite::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x168E40: testing::internal::UnitTestImpl::RunAllTests() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x184DAD: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134731: std::_MakeUniq<unsigned long long []>::__array std::make_unique<unsigned long long []>(unsigned long) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12EDF8: FileMatrix<unsigned long long, unsigned long>::loadRow(unsigned long) const (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12911E: FileMatrix<unsigned long long, unsigned long>::operator[](unsigned long) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B41B: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15EA4C: testing::TestInfo::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15F38A: testing::TestSuite::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x16F73A: testing::internal::UnitTestImpl::RunAllTests() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18B523: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164== 
 ==164== Invalid read of size 8
 ==164==    at 0x485293F: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x13A051: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x1399BF: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x138B69: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x136DDF: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x133158: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12E403: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128A6C: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13C711: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13BF02: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13AD8D: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x138DC1: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134C74: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12F317: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x129238: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164==  Address 0x4eaac98 is 8 bytes after a block of size 800 alloc'd
 ==164==    at 0x484A2F3: operator new[](unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x132C15: std::_MakeUniq<unsigned long long []>::__array std::make_unique<unsigned long long []>(unsigned long) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12DEE4: FileMatrix<unsigned long long, unsigned long>::loadRow(unsigned long) const (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128952: FileMatrix<unsigned long long, unsigned long>::operator[](unsigned long) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B41B: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x158152: testing::TestInfo::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x158A90: testing::TestSuite::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x168E40: testing::internal::UnitTestImpl::RunAllTests() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x184DAD: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134731: std::_MakeUniq<unsigned long long []>::__array std::make_unique<unsigned long long []>(unsigned long) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12EDF8: FileMatrix<unsigned long long, unsigned long>::loadRow(unsigned long) const (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12911E: FileMatrix<unsigned long long, unsigned long>::operator[](unsigned long) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B41B: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15EA4C: testing::TestInfo::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15F38A: testing::TestSuite::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x16F73A: testing::internal::UnitTestImpl::RunAllTests() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18B523: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164== 
 ==164== Invalid read of size 8
 ==164==    at 0x4852947: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x13A051: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x1399BF: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x138B69: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x136DDF: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x133158: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12E403: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128A6C: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13C711: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13BF02: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13AD8D: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x138DC1: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134C74: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12F317: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x129238: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164==  Address 0x4eaaca0 is 16 bytes after a block of size 800 alloc'd
 ==164==    at 0x484A2F3: operator new[](unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x132C15: std::_MakeUniq<unsigned long long []>::__array std::make_unique<unsigned long long []>(unsigned long) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12DEE4: FileMatrix<unsigned long long, unsigned long>::loadRow(unsigned long) const (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128952: FileMatrix<unsigned long long, unsigned long>::operator[](unsigned long) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B41B: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x158152: testing::TestInfo::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x158A90: testing::TestSuite::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x168E40: testing::internal::UnitTestImpl::RunAllTests() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x184DAD: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134731: std::_MakeUniq<unsigned long long []>::__array std::make_unique<unsigned long long []>(unsigned long) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12EDF8: FileMatrix<unsigned long long, unsigned long>::loadRow(unsigned long) const (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12911E: FileMatrix<unsigned long long, unsigned long>::operator[](unsigned long) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B41B: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15EA4C: testing::TestInfo::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15F38A: testing::TestSuite::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x16F73A: testing::internal::UnitTestImpl::RunAllTests() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18B523: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164== 
 ==164== Invalid read of size 8
 ==164==    at 0x485294F: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==164==    by 0x13A051: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x1399BF: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x138B69: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x136DDF: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x133158: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x12E403: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x128A6C: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x183E9C: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x17C5C8: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
-==164==    by 0x157637: testing::Test::Run() (in /tmp/tmp8ghnyq3q/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13C711: unsigned long long* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned long long>(unsigned long long const*, unsigned long long const*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13BF02: unsigned long long* std::__copy_move_a2<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x13AD8D: unsigned long long* std::__copy_move_a1<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x138DC1: unsigned long long* std::__copy_move_a<false, unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x134C74: unsigned long long* std::copy<unsigned long long*, unsigned long long*>(unsigned long long*, unsigned long long*, unsigned long long*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x12F317: FileMatrix<unsigned long long, unsigned long>::copy(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x129238: FileMatrix<unsigned long long, unsigned long>::operator=(FileMatrix<unsigned long long, unsigned long> const&) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x11B4AD: FileMatrixTester_assignmentOperatorCopying_expectedMatricesTheSame_Test::TestBody() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x18A612: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x182D62: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
+==164==    by 0x15DF31: testing::Test::Run() (in /tmp/tmp8mxpqi3c/student/zaj13FileMatrix/build/bin/unit_tests)
 ==164==  Address 0x4eaaca8 is 24 bytes after a block of size 800 in arena "client"
 ==164== 
-[       OK ] FileMatrixTester.assignmentOperatorCopying_expectedMatricesTheSame (3613 ms)
+[       OK ] FileMatrixTester.assignmentOperatorCopying_expectedMatricesTheSame (3808 ms)
 [ RUN      ] FileMatrixTester.moveConstruction_expectedFileMovedButSourceObjectUsable
-[       OK ] FileMatrixTester.moveConstruction_expectedFileMovedButSourceObjectUsable (1712 ms)
+[       OK ] FileMatrixTester.moveConstruction_expectedFileMovedButSourceObjectUsable (1779 ms)
 [ RUN      ] FileMatrixTester.assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable
-[       OK ] FileMatrixTester.assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable (1832 ms)
+[       OK ] FileMatrixTester.assignmentOperatorMoving_expectedFileMovedButSourceObjectUsable (1707 ms)
 [ RUN      ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator
-/tmp/tmp8ghnyq3q/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:597: Failure
-Failed
-Iterator not implemented!
-[  FAILED  ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator (41 ms)
+[       OK ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator (12 ms)
 [ RUN      ] FileMatrixTester.containerHasIteratowWorkingWithForLoop
-/tmp/tmp8ghnyq3q/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:638: Failure
-Failed
-Iterator not implemented!
-[  FAILED  ] FileMatrixTester.containerHasIteratowWorkingWithForLoop (11 ms)
+[       OK ] FileMatrixTester.containerHasIteratowWorkingWithForLoop (12 ms)
 [ RUN      ] FileMatrixTester.containerHasIteratowWorkingWithStl
-/tmp/tmp8ghnyq3q/student/zaj13FileMatrix/unitTests/FileMatrixTests.cpp:679: Failure
-Failed
-Iterator not implemented!
-[  FAILED  ] FileMatrixTester.containerHasIteratowWorkingWithStl (8 ms)
-[----------] 15 tests from FileMatrixTester (9652 ms total)
+[       OK ] FileMatrixTester.containerHasIteratowWorkingWithStl (21 ms)
+[----------] 15 tests from FileMatrixTester (9863 ms total)
 
 [----------] Global test environment tear-down
-[==========] 15 tests from 1 test suite ran. (9703 ms total)
-[  PASSED  ] 12 tests.
-[  FAILED  ] 3 tests, listed below:
-[  FAILED  ] FileMatrixTester.containerHasBeginEndMethodsReturningIterator
-[  FAILED  ] FileMatrixTester.containerHasIteratowWorkingWithForLoop
-[  FAILED  ] FileMatrixTester.containerHasIteratowWorkingWithStl
-
- 3 FAILED TESTS
+[==========] 15 tests from 1 test suite ran. (9918 ms total)
+[  PASSED  ] 15 tests.
 ==164== 
 ==164== HEAP SUMMARY:
 ==164==     in use at exit: 0 bytes in 0 blocks
-==164==   total heap usage: 91,310 allocs, 91,310 frees, 67,166,799 bytes allocated
+==164==   total heap usage: 91,289 allocs, 91,289 frees, 67,318,265 bytes allocated
 ==164== 
 ==164== All heap blocks were freed -- no leaks are possible
 ==164== 
