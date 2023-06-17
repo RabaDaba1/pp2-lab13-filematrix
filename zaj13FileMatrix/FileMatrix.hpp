@@ -18,7 +18,7 @@
     **dla każdego z typów!**
 **/
 
-#define UNDEFINED_FILE_MATRIX_ITERATOR
+//#define UNDEFINED_FILE_MATRIX_ITERATOR
 
 
 /** class FileMatrix
@@ -143,55 +143,77 @@ public:
      *  Wystarczy, żeby to był iterator jednokierunkowy.
      *  @note Jeśli go zdefiniujesz zdefiniuj makro: `#define FILE_MATRIX_ITERATOR_DEFINED 1` **/
     struct iterator {
-//        std::string fname_ {};
-//        mutable std::fstream descriptor_ {};
-//        IndexType dim_rows_, dim_cols_;
-//        IndexType position_ {};
-//
-//        iterator(const FileMatrix& matrix, IndexType pos = {}): fname_(matrix.filename_), dim_rows_(matrix.rows_), dim_cols_(matrix.columns_), position_(pos) {
-//            descriptor_ = std::fstream(fname_, std::ios::in | std::ios::out | std::ios::binary);
-//        };
-//
-//        iterator(const iterator& sourceIterator): fname_(sourceIterator.fname_), dim_rows_(sourceIterator.dim_rows_), dim_cols_(sourceIterator.dim_cols_), position_(sourceIterator.position_) {
-//            descriptor_ = std::fstream(fname_, std::ios::in | std::ios::out | std::ios::binary);
-//        }
-//
-//        iterator& operator++() {
-//            position_++;
-//            return *this;
-//        };
-//        iterator& operator--() {
-//            position_--;
-//            return *this;
-//        };
-//
-//        bool operator==(const iterator &anotherIt) const { return fname_ == anotherIt.fname_ && position_ == anotherIt.position_; }
-//        bool operator!=(const iterator& anotherIt) const { return fname_ != anotherIt.fname_ || position_ != anotherIt.position_; }
-//
-//        bool operator<(const iterator& rhs) const {return position_ < rhs.position_; }
-//        bool operator>(const iterator& rhs) const {return position_ > rhs.position_; }
-//
-//        int operator*() const {
-//            descriptor_.seekg(2*sizeof(IndexType) + position_ * sizeof(T), std::ios::beg);
-//
-//            char *result {};
-//            descriptor_.read(result, sizeof(T));
-//
-//            std::stringstream ss(result);
-//            int num;
-//            ss >> num;
-//
-//            return num;
-//        }
+        using iterator_category = std::random_access_iterator_tag;
+        using difference_type   = std::ptrdiff_t;
+        using value_type        = T;
+        using pointer           = T*;  // or also value_type*
+        using reference         = T&;  // or also value_type&
+
+        std::string fname_ {};
+        mutable std::fstream descriptor_ {};
+        IndexType position_ {};
+
+        iterator(std::string fname, IndexType pos = {}): fname_(std::move(fname)), position_(pos) {
+            descriptor_ = std::fstream(fname_, std::ios::in | std::ios::out | std::ios::binary);
+        };
+
+        iterator(const iterator& sourceIterator): fname_(sourceIterator.fname_), position_(sourceIterator.position_) {
+            descriptor_ = std::fstream(fname_, std::ios::in | std::ios::out | std::ios::binary);
+        }
+
+        IndexType operator-(const iterator& rhs) {
+            return position_ - rhs.position_;
+        }
+
+        iterator& operator++() {
+            position_++;
+            return *this;
+        };
+
+        iterator operator++(int) {
+            iterator temp = *this;
+            ++(*this);
+            return temp;
+        };
+
+        iterator& operator--() {
+            position_--;
+            return *this;
+        };
+
+        iterator operator--(int) {
+            iterator temp = *this;
+            --(*this);
+            return temp;
+        };
+
+        bool operator==(const iterator &anotherIt) const { return fname_ == anotherIt.fname_ && position_ == anotherIt.position_; }
+        bool operator!=(const iterator& anotherIt) const { return !(*this == anotherIt); }
+
+        T operator[](IndexType index) const {
+            descriptor_.seekg(2*sizeof(IndexType) + index * sizeof(T), std::ios::beg);
+
+            T result {};
+            descriptor_.read(reinterpret_cast<char*>(&result), sizeof(T));
+
+            return result;
+        }
+
+        T operator*() const {
+            descriptor_.seekg(2*sizeof(IndexType) + position_ * sizeof(T), std::ios::beg);
+
+            T result {};
+            descriptor_.read(reinterpret_cast<char*>(&result), sizeof(T));
+
+            return result;
+        }
     };
 
     iterator begin() {
-//        return iterator(*this, 0);
-return {};
+        return iterator(filename_, 0);
     }
     iterator end() {
-//        return iterator(*this, rows_*columns_);
-        return {};
+        return iterator(filename_, rows_*columns_);
     }
 
 private: // methods:
